@@ -39,7 +39,7 @@ public static void main(String[] args) {
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
 				String pinCode = (rs.getString("PINCODE"));
-				String datafrmTable = "SELECT SUBSCRIBERID,ADDRESS1,CITY,STATE FROM SWAP WHERE PINCODE=\'"+pinCode+"\'";
+				String datafrmTable = "SELECT SUBSCRIBERID,ADDRESS1,CITY,STATE,CNTY FROM SWAP WHERE PINCODE=\'"+pinCode+"\'";
 				PreparedStatement pst1 = connection.prepareStatement(datafrmTable);
 				ResultSet rs1 = pst1.executeQuery();
 				List<String> subid = new ArrayList<String>();
